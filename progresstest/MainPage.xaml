@@ -8,36 +8,30 @@
 
     <ScrollView>
         <VerticalStackLayout Spacing="25" Padding="30,0" VerticalOptions="Start">
-            <!-- Header with circular image and artist name -->
-            <Frame HeightRequest="100" 
-                   WidthRequest="100" 
-                   CornerRadius="50" 
-                   HorizontalOptions="Center" 
-                   BorderColor="Orange" 
-                   Padding="3"
-                   Margin="0,20,0,0" 
-                   HasShadow="True" 
-                   BackgroundColor="Orange" 
-                   IsClippedToBounds="True"
-                   >
-                <!-- This sets the border color -->
-                <Image Source="vangogh.png" 
-                       Aspect="AspectFill" 
+            <Border HeightRequest="100"
+                    WidthRequest="100"
+                    HorizontalOptions="Center"
+                    Stroke="Orange"
+                    StrokeThickness="5"
+                    Padding="3"
+                    Margin="0,20,0,0"
+                    BackgroundColor="Orange"
+                    StrokeShape="RoundRectangle 80,80,80,80">
+                <Image Source="vangogh.png"
+                       Aspect="AspectFill"
                        HeightRequest="98"
                        WidthRequest="98"
                        Margin="0"
                        BackgroundColor="Orange"/>
-            </Frame>
+            </Border>
 
 
 
 
 
             <Label Text="Vincent van Gogh" FontSize="24" HorizontalOptions="Center" TextColor="White" Margin="0,0,0,-10" FontFamily="TimesNewRoman"/>
-            <!-- Artist details and biography -->
             <Label Text="Dutch, 1853—1890" FontAttributes="Italic" Opacity="0.6" HorizontalOptions="Center" TextColor="White" Margin="0,-10,0,0" FontFamily="TimesNewRoman"/>
             
-            <!-- Expander for Read More functionality -->
             <ct:Expander>
                 <ct:Expander.Header>
                     <Label Text="Was a Dutch Post-Impressionist painter who is among the most famous and influential..." 
@@ -60,7 +54,6 @@
              WidthRequest="500"
              HeightRequest="2"/>
 
-            <!-- Records and Statistics -->
             <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -95,7 +88,6 @@
                      WidthRequest="500"
                      HeightRequest="2"/>
 
-            <!-- Other Works Section -->
             <Label Text="Other Van Gogh Works" TextColor="White" FontFamily="TimesNewRoman" FontSize="20"/>
             <Grid Padding="10"
                   RowSpacing="10">
@@ -104,7 +96,6 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
-                    <!-- Add additional RowDefinitions here for more items -->
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
@@ -112,7 +103,6 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <!-- First Artwork -->
                 <Image Grid.Row="0" Grid.Column="0"
                        Source="peachtree.jpg"
                        Aspect="AspectFill"
@@ -127,7 +117,6 @@
                            TextColor="White" FontFamily="TimesNewRoman"/>
                 </VerticalStackLayout>
 
-                <!-- Second Artwork -->
                 <Image Grid.Row="1" Grid.Column="0"
                        Source="cafeterrace.jpg"
                        Aspect="AspectFill"
@@ -143,8 +132,7 @@
                            TextColor="White"
                            FontFamily="TimesNewRoman"/>
                 </VerticalStackLayout>
-
-                <!-- Third Artwork -->
+                
                 <Image Grid.Row="2" Grid.Column="0"
                        Source="sunflower.jpg"
                        Aspect="AspectFill"
@@ -161,7 +149,6 @@
                            FontFamily="TimesNewRoman"/>
                 </VerticalStackLayout>
 
-                <!-- Fourth Artwork -->
                 <Image Grid.Row="3" Grid.Column="0"
                        Source="cypressess.jpg"
                        Aspect="AspectFill"
