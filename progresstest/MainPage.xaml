@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="progresstest.MainPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#353935"
+             xmlns:ct="clr-namespace:CommunityToolkit.Maui.Views;assembly=CommunityToolkit.Maui">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Padding="30,0" VerticalOptions="Start">
+            <!-- Header with circular image and artist name -->
+            <Frame HeightRequest="100" 
+                   WidthRequest="100" 
+                   CornerRadius="50" 
+                   HorizontalOptions="Center" 
+                   BorderColor="Orange" 
+                   Padding="3"
+                   Margin="0,20,0,0" 
+                   HasShadow="True" 
+                   BackgroundColor="Orange" 
+                   IsClippedToBounds="True"
+                   >
+                <!-- This sets the border color -->
+                <Image Source="vangogh.png" 
+                       Aspect="AspectFill" 
+                       HeightRequest="98"
+                       WidthRequest="98"
+                       Margin="0"
+                       BackgroundColor="Orange"/>
+            </Frame>
+
+
+
+
+
+            <Label Text="Vincent van Gogh" FontSize="24" HorizontalOptions="Center" TextColor="White" Margin="0,0,0,-10" FontFamily="TimesNewRoman"/>
+            <!-- Artist details and biography -->
+            <Label Text="Dutch, 1853—1890" FontAttributes="Italic" Opacity="0.6" HorizontalOptions="Center" TextColor="White" Margin="0,-10,0,0" FontFamily="TimesNewRoman"/>
+            
+            <!-- Expander for Read More functionality -->
+            <ct:Expander>
+                <ct:Expander.Header>
+                    <Label Text="Was a Dutch Post-Impressionist painter who is among the most famous and influential..." 
+                           MaxLines="4" 
+                           LineBreakMode="WordWrap"
+                           TextColor="White" 
+                           FontFamily="TimesNewRoman"/>
+                </ct:Expander.Header >
+                <Label x:Name="DescriptionLabel" Text="figures in the history of Western art. In just over a decade, he created about 2,100 artworks, including around 860 oil paintings, most of which date from the last two years of his life. They include landscapes, still lifes, portraits, and self-portraits, and are characterized by bold colors and dramatic, impulsive, and expressive brushwork that contributed to the foundations of modern art." TextColor="White" FontFamily="TimesNewRoman"/>
+            </ct:Expander>
+            <Button Text="Read More"
+                    TextColor="Orange"
+                    Clicked="OnReadMoreClicked"
+                    FontFamily="TimesNewRoman"
+                    BackgroundColor="Transparent"
+                    Margin="0,-15,0,-10"/> 
+
+            <BoxView Color="LightGray"
+             CornerRadius="10"
+             WidthRequest="500"
+             HeightRequest="2"/>
+
+            <!-- Records and Statistics -->
+            <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <VerticalStackLayout Grid.Column="0" Padding="10" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <Label Text="$7.5m" FontAttributes="Bold" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontFamily="TimesNewRoman"/>
+                    <Label Text="Record" Opacity="0.6" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontFamily="TimesNewRoman"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Column="1" Padding="10" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <Label Text="$3.5m" FontAttributes="Bold" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontFamily="TimesNewRoman"/>
+                    <Label Text="Average" Opacity="0.6" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontFamily="TimesNewRoman"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Column="2" Padding="10" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <Label Text="+598%" FontAttributes="Bold" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontFamily="TimesNewRoman"/>
+                    <Label Text="General" Opacity="0.6" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontFamily="TimesNewRoman"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Column="3" Padding="10" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <Label Text="12" FontAttributes="Bold" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontFamily="TimesNewRoman"/>
+                    <Label Text="Items" Opacity="0.6" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontFamily="TimesNewRoman"/>
+                </VerticalStackLayout>
+            </Grid>
+
+            <BoxView Color="LightGray"
+                     CornerRadius="10"
+                     WidthRequest="500"
+                     HeightRequest="2"/>
+
+            <!-- Other Works Section -->
+            <Label Text="Other Van Gogh Works" TextColor="White" FontFamily="TimesNewRoman" FontSize="20"/>
+            <Grid Padding="10"
+                  RowSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <!-- Add additional RowDefinitions here for more items -->
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- First Artwork -->
+                <Image Grid.Row="0" Grid.Column="0"
+                       Source="peachtree.jpg"
+                       Aspect="AspectFill"
+                       HeightRequest="150"
+                       WidthRequest="100"/>
+
+                <VerticalStackLayout Grid.Row="0" Grid.Column="1" Padding="10">
+                    <Label Text="Peach Tree in Blossom"
+                           FontAttributes="Bold"
+                           TextColor="White" FontFamily="TimesNewRoman"/>
+                    <Label Text="$950,000"
+                           TextColor="White" FontFamily="TimesNewRoman"/>
+                </VerticalStackLayout>
+
+                <!-- Second Artwork -->
+                <Image Grid.Row="1" Grid.Column="0"
+                       Source="cafeterrace.jpg"
+                       Aspect="AspectFill"
+                       HeightRequest="150"
+                       WidthRequest="100"/>
+
+                <VerticalStackLayout Grid.Row="1" Grid.Column="1" Padding="10">
+                    <Label Text="Cafe Terrace at Night"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           FontFamily="TimesNewRoman"/>
+                    <Label Text="$1,920,000"
+                           TextColor="White"
+                           FontFamily="TimesNewRoman"/>
+                </VerticalStackLayout>
+
+                <!-- Third Artwork -->
+                <Image Grid.Row="2" Grid.Column="0"
+                       Source="sunflower.jpg"
+                       Aspect="AspectFill"
+                       HeightRequest="150"
+                       WidthRequest="100"/>
+
+                <VerticalStackLayout Grid.Row="2" Grid.Column="1" Padding="10">
+                    <Label Text="Sunflower"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           FontFamily="TimesNewRoman"/>
+                    <Label Text="$1,500,000"
+                           TextColor="White"
+                           FontFamily="TimesNewRoman"/>
+                </VerticalStackLayout>
+
+                <!-- Fourth Artwork -->
+                <Image Grid.Row="3" Grid.Column="0"
+                       Source="cypressess.jpg"
+                       Aspect="AspectFill"
+                       HeightRequest="150"
+                       WidthRequest="100"/>
+
+                <VerticalStackLayout Grid.Row="3" Grid.Column="1" Padding="10">
+                    <Label Text="Cypress"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           FontFamily="TimesNewRoman"/>
+                    <Label Text="$2,200,000"
+                           TextColor="White"
+                           FontFamily="TimesNewRoman"/>
+                </VerticalStackLayout>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+
+
+</ContentPage>
